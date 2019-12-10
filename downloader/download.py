@@ -51,7 +51,7 @@ def get_ooi_labelmap(labelmap):
 
     object_codes = {}
     for idx, row in labelmap.iterrows():
-        if any(obj.lower() in row[1].lower() for obj in OBJECTS):
+        if any(obj.lower() == row[1].lower() for obj in OBJECTS):
             object_codes[row[1].lower()] = row[0]
 
     return object_codes
